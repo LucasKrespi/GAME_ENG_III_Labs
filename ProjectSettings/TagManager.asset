@@ -43,6 +43,18 @@ TagManager:
   - name: Background
     uniqueID: 3753241743
     locked: 0
+  - name: Ground
+    uniqueID: 3821692653
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: obstacles
+    uniqueID: 1507678761
+    locked: 0
+  - name: Above ground
+    uniqueID: 3576708371
+    locked: 0
+  - name: foreground
+    uniqueID: 406571247
     locked: 0
