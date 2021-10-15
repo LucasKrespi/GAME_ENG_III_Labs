@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -9,10 +11,14 @@ public class PlayerBehaviour : MonoBehaviour
 
     [SerializeField]
     private Rigidbody2D player_Rigidbody2D;
-    // Start is called before the first frame update
+    private GameObject pauseMenu;
+    
     void Start()
     {
         player_Rigidbody2D = GetComponent<Rigidbody2D>();
+        pauseMenu = GameObject.Find("PauseCanvas");
+        pauseMenu.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -22,5 +28,13 @@ public class PlayerBehaviour : MonoBehaviour
         float inputY = Input.GetAxisRaw("Vertical");
 
         player_Rigidbody2D.velocity = new Vector2(inputX * moveSpeed, inputY * moveSpeed);
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
+
+
 }
